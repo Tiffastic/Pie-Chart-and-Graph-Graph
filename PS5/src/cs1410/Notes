@@ -1,0 +1,150 @@
+	List<String> elements = getDistinctElements(column1);
+		List<List<Integer>> data = prepareListData(elements.size());
+
+		// iterate through column1 and map that to the index of the
+		// corresponding elements
+		// after we get the index, we add the integer in column 2 in that index
+		// of element
+
+		storeCorrespondingData(column1, column2, elements, data);
+
+
+		// for each item in the category, know where its index is in the
+		// elements list
+		// the index corresponds the its data in the data list
+		// for each item's data, do the operation on it, then store that
+		// operation result in the operation Data list
+
+		double categoriesSum = sumTheCategories(operation, categories,
+				elements, data);
+
+		// now that we know the sum of the categories, we can get the percentage
+		// of targetDataOperation/categoriesSum
+		// then we use this percentage to make our pie chart by multiplying it
+		// by 360, resulting in a degree
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		 * Put all of the strings from column1 into a set, then add all the
+		 * set elements back into a list.
+		 * 
+		 * We use the list of only distinct states as a way to index where
+		 * the states are
+		 * 
+		 * We create a List<List<Integer>> dataList
+		 * Whereever the state is in the list (its index), that's where its
+		 * corresponding
+		 * data is in the dataList.
+		 */
+		
+		
+		
+		
+		
+	/*
+	 * If column1 and column2 have different lengths, throws an
+	 * IllegalArgumentException.
+	 * If column2 contains any non-positive numbers, throws an
+	 * IllegalAgumentException.
+	 * If categories and colors have different lengths, or are of length zero,
+	 * throws an IllegalArgumentException.
+	 * If categories contains any duplicates, throws an
+	 * IllegalArgumentException.
+	 * If operation is anything other than 0, 1, or 2, throws an
+	 * IllegalArgumentException.
+	 */
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 	 * If column1 and column2 have different lengths, throws an
+	 * IllegalArgumentException.
+	 * If column2 contains any non-positive numbers, throws an
+	 * IllegalAgumentException.
+	 * If categories and colors have different lengths, or are of length zero,
+	 * throws an IllegalArgumentException.
+	 * If categories contains any duplicates, throws an
+	 * IllegalArgumentException.
+	 * If operation is anything other than 0, 1, or 2, throws an
+	 * IllegalArgumentException.
+	 * 
+	 * Put side-by-side, the lists column1 and column2 represent a table, where
+	 * each row contains a string and
+	 * a number. For example, here is a table that might give the number of
+	 * people named Zebediah in different parts
+	 * of four states.
+	 * 
+	 * <pre>
+	 *  Utah          5
+	 *  Nevada        6
+	 *  California   12
+	 *  Oregon        8
+	 *  Utah          9
+	 *  California   10
+	 *  Nevada        4
+	 *  Nevada        4
+	 *  Oregon       17
+	 *  California    6
+	 * </pre>
+	 * 
+	 * Let c be a string that appears in the parameter categories. We can
+	 * associate c with a list of numbers by collecting
+	 * every number that is paired with c in the table. For example, if
+	 * categories = [Utah, Nevada, California], we get the
+	 * following pairings:
+	 * 
+	 * Utah [5, 9]
+	 * Nevada [6, 4, 4]
+	 * California [12, 10, 6]
+	 * 
+	 * We can convert each list to a number by either summing it, averaging it,
+	 * or finding its maximum. For example, if we
+	 * choose to sum the lists, we get the following pairings:
+	 * 
+	 * Utah 14
+	 * Nevada 14
+	 * California 28
+	 * 
+	 * The job of this method is to use column1, column2, and categories to
+	 * obtain a pairing between strings and numbers as
+	 * described above. (If any of the names in categories is paired with no
+	 * numbers, the method should throw an IllegalArgumentException.)
+	 * The method should sum each list if operation is 0, average each list if
+	 * operation is 1, or find the maximum of each list if operation is 2.
+	 * 
+	 * Once the method has paired each name in categories with a number, it
+	 * should display the data with either a pie chart (if usePieChart is
+	 * true) or a bar graph (otherwise). The area of each slice (of a pie chart)
+	 * and the length of each bar (in a bar graph) should be proportional
+	 * to the number being graphed. In the example above, in a pie chart Utah
+	 * and Nevada should each have a quarter of the pie and California should
+	 * have half. In a bar graph, California's line should be twice as long as
+	 * Utah's and Nevada's.
+	 * 
+	 * In both the pie chart and the bar graph, the color used for categories[i]
+	 * should be colors[i].
+	 * 
+	 * The method should display the pie chart or bar graph by drawing on the g
+	 * parameter. The example code below draws both a pie chart
+	 * and a bar graph for the situation described above.
